@@ -1,0 +1,5 @@
+<map id="sBLE_HM::ping" name="sBLE_HM::ping">
+<area shape="rect" id="node1" title="Ping HM&#45;10/HM&#45;16 module." alt="" coords="205,31,319,56"/>
+<area shape="rect" id="node2" href="$group__s_b_l_e.html#ga2b033026180d12d7345f4268567bdde9" title="Break bluetooth connection." alt="" coords="5,5,157,31"/>
+<area shape="rect" id="node3" href="$group__s_b_l_e.html#gaaa646270642c076c599f9551fa35a40a" title="Init HM&#45;10/HM&#45;16 BLE module." alt="" coords="28,55,135,80"/>
+</map>
