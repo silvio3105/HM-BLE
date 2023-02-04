@@ -45,6 +45,11 @@ sBLE_HM::~sBLE_HM(void)
 {
 	TX = nullptr;
 	RX = nullptr;
+
+	sysKey = nullptr;
+	rst = nullptr;
+	status = nullptr;
+	rxBuff[0] = '\0';
 }
 
 uint8_t sBLE_HM::init(void)
@@ -113,9 +118,7 @@ uint8_t sBLE_HM::send(const char* tx, uint8_t txLen, const char* rx, const uint8
 }
 
 uint8_t sBLE_HM::sendReceive(const char* tx, const uint8_t txLen, const uint8_t rxLen, const char rxStop, char* output, const uint8_t rxOffset, const uint8_t rxMax)
-{
-	memset(rxBuff, '\0', sizeof(rxBuff)); // SOON: Za test
-	
+{	
 	// Send command
 	TX(tx, txLen);
 
@@ -139,11 +142,13 @@ uint8_t sBLE_HM::sendReceive(const char* tx, const uint8_t txLen, const uint8_t 
 
 uint8_t sBLE_HM::sendCmd(const char* cmd, ...)
 {
+	// Format command string
 	va_list args;
 	va_start(args, cmd);	
 	uint8_t len = vsnprintf(rxBuff, sizeof(rxBuff), cmd, args);
 	va_end(args);
 
+	// Send formated command and return status
 	return send(rxBuff, len, "OK+", 3);
 }
 
