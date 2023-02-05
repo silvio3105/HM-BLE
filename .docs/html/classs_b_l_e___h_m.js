@@ -21,6 +21,7 @@ var classs_b_l_e___h_m =
     [ "init", "group__s_b_l_e.html#gaaa646270642c076c599f9551fa35a40a", null ],
     [ "isConnected", "group__s_b_l_e.html#gae4fc900a5cedab91dcd6a8fd0699797b", null ],
     [ "ping", "group__s_b_l_e.html#gab5b42e4d0ace4d24b4f4644a6804e200", null ],
+    [ "print", "group__s_b_l_e.html#gac519a181a4343be50aecabeadab60114", null ],
     [ "renew", "group__s_b_l_e.html#gaaff622af53e591ca0a8baf583fa5e72c", null ],
     [ "reset", "group__s_b_l_e.html#ga60de64561fae4cdfba412e0fe8ba2792", null ],
     [ "setAdvInterval", "group__s_b_l_e.html#ga28411410cb73c6a71f5b167e71512820", null ],
