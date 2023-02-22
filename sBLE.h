@@ -47,7 +47,7 @@ This License shall be included in all methodal textual files.
 
 // HM-10/HM-16 DATASHEET STUFF
 #define SBLE_HM_DISCONNECT_TIME			100 /**< @brief Minimum time between toggling system key pin for breaking connection. */
-#define SBLE_HM_RESET_TIME				100 /**< @brief Minimum time between toggling reset pin. */
+#define SBLE_HM_RESET_TIME				500 /**< @brief Minimum time between toggling reset pin. */
 
 
 // ----- ENUMS
@@ -305,8 +305,17 @@ class sBLE_HM
 	 */
 	void reset(sBLE_action_t type);
 
+	/**
+	 * @brief Format C-string and print it to BLE module.
+	 * 
+	 * @param str Pointer to C-string.
+	 * @param ... Variable arguments
+	 * @return No return value.
+	 * 
+	 * @warning Maximum length of formatted C-string is 128 bytes.
+	 */
 	void printf(const char* str, ...);
-
+	
 
 	/**
 	 * @brief Send text over BLE.
@@ -737,6 +746,18 @@ class sBLE_HM
 		return sendReceive("AT+TYPE?\r\n", 10, 9, '\r', (char*)mode, 7, 1);
 	}
 
+	/**
+	 * @brief Get HM-10/HM-16 module firmware version.
+	 * 
+	 * @param output Pointer to output variable
+	 * @return \c SBLE_NOK if command is not succesfully executed.
+	 * @return \c SBLE_OK if command is succesfully executed. 
+	 */
+	inline uint8_t getVersion(char* output)
+	{
+		return sendReceive("AT+VERS?\r\n", 10, 18, '\r', output, 7, 11);
+	}
+
 
 	// PRIVATE STUFF
 	private:
@@ -747,6 +768,7 @@ class sBLE_HM
 	pinHandler rst = nullptr; /**< @brief Pointer to reset GPIO handler. */
 	pinStatusHandler status = nullptr; /**< @brief Pointer to status GPIO handler. */
 	char rxBuff[24] = { '\0' }; /**< @brief UART RX buffer. */
+	char txBuff[128] = { '\0' }; /**< @brief UART TX buffer used for printfs. */
 
 	// METHOD DECLARATIONS
 	/**
