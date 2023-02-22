@@ -5,5 +5,6 @@ var searchData=
   ['ping_2',['ping',['../group__s_b_l_e.html#gab5b42e4d0ace4d24b4f4644a6804e200',1,'sBLE_HM']]],
   ['pinhandler_3',['pinHandler',['../group__s_b_l_e.html#gaca89637fcd24dee3be1df07d1ab8bec2',1,'sBLE.h']]],
   ['pinstatushandler_4',['pinStatusHandler',['../group__s_b_l_e.html#gafc088c368daf28b27fb23b690d280658',1,'sBLE.h']]],
-  ['print_5',['print',['../group__s_b_l_e.html#gac519a181a4343be50aecabeadab60114',1,'sBLE_HM']]]
+  ['print_5',['print',['../group__s_b_l_e.html#gac519a181a4343be50aecabeadab60114',1,'sBLE_HM']]],
+  ['printf_6',['printf',['../group__s_b_l_e.html#ga57ddc07ad8159d686ab7015a91d152d9',1,'sBLE_HM']]]
 ];
